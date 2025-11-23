@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nivaldo Junior | Psicólogo</title>
+  <meta name="description" content="Site profissional do psicólogo Nivaldo Junior. Atendimento online e presencial. Especialista em [sua abordagem]">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f9; /* cor de fundo suave e profissional */
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #2a4d69;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .hero-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
+    h2 {
+      color: #2a4d69;
+      margin-top: 40px;
+    }
+    p {
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      background-color: #e1e5ec;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nivaldo Junior</h1>
+    <p>Psicólogo clínico | Atendimento online e presencial</p>
+  </header>
+
+  <div class="container">
+    <img src="https://via.placeholder.com/700x400.png?text=Imagem+Profissional" alt="Foto profissional de Nivaldo Junior" class="hero-image">
+
+    <h2>Bem-vindo ao meu site</h2>
+    <p>
+      Olá, sou o <strong>Nivaldo Junior</strong>, psicólogo dedicado a ajudar pessoas a encontrarem equilíbrio emocional, sentido e bem-estar. Trabalho com abordagens como [coloque aqui sua abordagem principal ou especialidade], oferecendo um espaço seguro e acolhedor para terapia.
+    </p>
+
+    <h2>O que faço</h2>
+    <p>
+      Meus serviços incluem: sessões individuais, acompanhamento psicológico, terapia para ansiedade, depressão, autoconhecimento e desenvolvimento pessoal. Atendo de forma online e presencial, adaptando o método à sua necessidade.
+    </p>
+
+    <h2>Por que me escolher</h2>
+    <p>
+      Acredito que cada pessoa é única, e por isso trabalho com empatia, escuta ativa e personalização no atendimento. Meu objetivo é construir um vínculo de confiança, para que possamos caminhar juntos na sua jornada de crescimento.
+    </p>
+
+    <h2>Contato</h2>
+    <p>
+      Se você quer saber como funciona a terapia ou agendar uma sessão, entre em contato comigo. Será um prazer conversar e te apoiar.
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2025 Nivaldo Junior. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
