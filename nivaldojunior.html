@@ -7,21 +7,19 @@
     <meta name="description" content="Site profissional do psicólogo Nivaldo Júnior. Atendimento online e presencial. Especialista em Psicolinguística">
     
     <style>
-        /* CORREÇÃO CRUCIAL: Adiciona o padding no body para que o conteúdo não fique sob o header fixo */
+        /* ESTILOS BASE */
         body {
             margin: 0;
-            padding-top: 60px; /* Ajuste este valor para a altura exata do seu header fixo */
+            padding-top: 60px; /* CRUCIAL: Adiciona espaço no topo para o header fixo (60px) */
             font-family: Arial, sans-serif;
             background-color: #f4f7f9;
             color: #333;
             line-height: 1.6;
         }
 
-        /* ---------------------------------------------------- */
-        /* ESTILOS DO HEADER FIXO (Classe que deve ser usada) */
-        /* ---------------------------------------------------- */
+        /* ESTILOS DO HEADER FIXO */
         .header-fixo {
-            position: fixed; /* Fixa o header no topo */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -30,19 +28,17 @@
             color: white;
             z-index: 1000;
             display: flex;
-            justify-content: space-between; /* Espaçamento entre o título e o menu/botão */
+            justify-content: space-between;
             align-items: center;
             padding: 0 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        /* Estilo para o H1 dentro do header fixo */
         .header-fixo h1 {
             margin: 0;
-            font-size: 1.5rem; /* Tamanho ajustado para caber na barra fixa */
+            font-size: 1.5rem;
         }
         
-        /* Oculta o subtítulo para economizar espaço na barra fixa, se desejar */
         .header-fixo p {
             display: none; 
         }
@@ -58,7 +54,7 @@
             line-height: 1;
         }
 
-        /* ESTILOS DO MENU PRINCIPAL */
+        /* ESTILOS DOS LINKS */
         .menu-principal a {
             color: white;
             text-decoration: none;
@@ -67,18 +63,19 @@
         }
         
         /* ---------------------------------------------------- */
-        /* Estilos do CONTEÚDO abaixo do Header */
+        /* CORREÇÃO DO CONTAINER */
         /* ---------------------------------------------------- */
         .container {
             max-width: 800px;
-            margin: 40px auto;
+            /* CORREÇÃO: Remove a margem superior de 40px para evitar sobreposição */
+            margin: 0 auto 40px auto; 
             padding: 0 20px;
         }
 
         .hero-image {
             display: block;
             width: 100%;
-            max-width: 600px; /* Limita o tamanho MÁXIMO da imagem no desktop */
+            max-width: 600px;
             height: auto;
             margin: 20px auto;
             border-radius: 8px;
@@ -89,23 +86,25 @@
             margin-top: 40px;
         }
         
+        p {
+            margin-top: 20px;
+        }
+        
         /* ---------------------------------------------------- */
         /* ESTILOS MOBILE (Media Queries) */
         /* ---------------------------------------------------- */
         @media (max-width: 768px) {
             
-            /* Mostra o botão hambúrguer no celular */
             #btnMenu {
                 display: block; 
             }
             
-            /* Esconde o menu principal e o posiciona para descer */
             .menu-principal {
                 display: none;
                 flex-direction: column; 
                 position: absolute;
-                top: 60px; /* Coloca o menu abaixo do header fixo */
-                right: 0; /* Alinha o menu aberto à direita */
+                top: 60px;
+                right: 0;
                 width: 100%;
                 background-color: #2a4d69; 
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -115,7 +114,6 @@
                 border-top: 1px solid #1e3a51;
             }
 
-            /* CLASSE DE ATIVAÇÃO: REVELA O MENU */
             .menu-ativo {
                 display: flex !important;
             }
@@ -133,9 +131,10 @@
 <body>
 
     <header class="header-fixo">
-        
         <h1>Nivaldo Júnior</h1>
-        <p>Psicólogo clínico</p> <button id="btnMenu" class="menu-hamburguer">☰</button>
+        <p>Psicólogo clínico</p>
+
+        <button id="btnMenu" class="menu-hamburguer">☰</button>
         
         <nav id="menuLinks" class="menu-principal">
             <a href="#">Blog</a>
@@ -145,6 +144,7 @@
     </header>
     
     <div class="container">
+        
         <img src="nivaldo.jpg"
             class="hero-image"
             alt="CRP 09-016675"
