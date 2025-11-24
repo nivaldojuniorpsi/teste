@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<html lang="pt-br"> <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nivaldo Júnior | Psicólogo</title>
     <meta name="description" content="Site profissional do psicólogo Nivaldo Júnior. Atendimento online e presencial. Especialista em Psicolinguística">
     
     <style>
-        /* CORREÇÃO CRUCIAL: Aplica box-sizing a todos os elementos para que padding e border sejam INCLUÍDOS na largura/altura total */
+        /* Aplica box-sizing a todos os elementos para evitar problemas de largura */
         * {
             box-sizing: border-box;
         }
@@ -23,6 +22,17 @@
             overflow-x: hidden; 
         }
 
+        /* CORREÇÃO DO TEXTO JUSTIFICADO */
+        p {
+            margin-top: 20px;
+            text-align: justify; /* Mantém a justificação */
+            
+            /* PROPRIEDADES DE HIFENIZAÇÃO: Permite que o navegador quebre palavras longas */
+            hyphens: auto; 
+            -webkit-hyphens: auto; /* Para Chrome, Safari */
+            -ms-hyphens: auto;     /* Para Edge, IE */
+        }
+        
         /* ---------------------------------------------------- */
         /* ESTILOS DO HEADER FIXO */
         /* ---------------------------------------------------- */
@@ -38,8 +48,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            /* Padding padrão para desktop */
-            padding: 0 20px; 
+            padding: 0 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
@@ -98,18 +107,13 @@
             margin-top: 40px;
         }
         
-        p {
-            margin-top: 20px;
-        }
-        
         /* ---------------------------------------------------- */
         /* ESTILOS MOBILE (Media Queries) */
         /* ---------------------------------------------------- */
         @media (max-width: 768px) {
             
-            /* CORREÇÃO: Reduzindo o padding lateral no mobile para dar mais espaço ao conteúdo */
             .header-fixo {
-                padding: 0 10px; /* Reduz de 20px para 10px em cada lado */
+                padding: 0 10px; 
             }
 
             .menu-principal {
@@ -118,7 +122,6 @@
                 position: absolute;
                 top: 60px;
                 right: 0;
-                /* Certificando que o menu aberto não estoure a largura */
                 width: 100%;
                 background-color: #2a4d69; 
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -167,22 +170,22 @@
         <img src="logo.png" alt="Nivaldo José da Cunha Júnior" class="hero-image">
 
         <h2>Bem-vindo ao meu site</h2>
-        <p style="text-align: justify;">
+        <p>
             Olá, sou o <strong>Nivaldo Júnior</strong>, psicólogo dedicado a ajudar pessoas a encontrarem equilíbrio emocional, sentido e bem-estar. Trabalho com abordagens como Psicanálise e Psicolinguística, oferecendo um espaço seguro e acolhedor para terapia.
         </p>
 
         <h2>O que faço</h2>
-        <p style="text-align: justify;">
+        <p>
             Meus serviços incluem: sessões individuais, acompanhamento psicológico, terapia para ansiedade, depressão, autoconhecimento e desenvolvimento pessoal. Atendo de forma online e presencial, adaptando o método à sua necessidade.
         </p>
 
         <h2>Por que me escolher</h2>
-        <p style="text-align: justify;">
+        <p>
             Acredito que cada pessoa é única, e por isso trabalho com empatia, escuta ativa e personalização no atendimento. Meu objetivo é construir um vínculo de confiança, para que possamos caminhar juntos na sua jornada de crescimento.
         </p>
 
         <h2>Contato</h2>
-        <p style="text-align: justify;">
+        <p>
             Se você quer saber como funciona a terapia ou agendar uma sessão, entre em contato comigo. Será um prazer conversar e te apoiar.
         </p>
     </div>
