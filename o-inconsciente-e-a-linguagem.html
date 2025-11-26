@@ -80,7 +80,7 @@
             <nav class="hidden md:flex space-x-4">
                 <a href="https://nivaldojuniorpsi.github.io/home/home.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
                 <a href="https://nivaldojuniorpsi.github.io/home/blog.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Blog</a>
-                <a href="https://nivaldojuniorpsi.github.io/home/sobre.html" class="px-3 py-2 rounded-md text-sm font-medium bg-[#4A80A4] text-white">Sobre</a>
+                <a href="https://nivaldojuniorpsi.github.io/home/sobre.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Sobre</a>
                 <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
             </nav>
 
@@ -95,7 +95,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="https://nivaldojuniorpsi.github.io/home/home.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
                 <a href="https://nivaldojuniorpsi.github.io/home/blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Blog</a>
-                <a href="sobre.html" class="block px-3 py-2 rounded-md text-base font-medium bg-[#4A80A4] text-white">Sobre</a>
+                <a href="sobre.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Sobre</a>
                 <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
             </div>
         </div>
@@ -121,8 +121,7 @@
             <div class="article-content" id="article-content">
                 
                 <h2>Introdução: A Inscrição do Sujeito na Ordem Simbólica</h2>
-                <p>A psicanálise, desde sua fundação por Sigmund Freud, postulou a existência de uma instância psíquica radicalmente alheia à consciência. No entanto, o pleno alcance da relação entre essa instância – o Inconsciente – e a estrutura da linguagem só foi atingido décadas mais tarde, com a revisão estruturalista de Jacques Lacan.</p> 
-                <p>Para compreender Lacan, é essencial reconhecer as bases conceituais que o precederam: a descoberta fenomenológica de Freud e a fundação filosófica da subjetividade moderna por G. W. F. Hegel. Este ensaio explora como o Inconsciente, inicialmente revelado por seus efeitos, passa a ser definido por sua própria materialidade linguística, transformando a clínica em uma **"cura pela fala"** regida pelas leis do significante.</p>
+                <p>A psicanálise, desde sua fundação por Sigmund Freud, postulou a existência de uma instância psíquica radicalmente alheia à consciência. No entanto, o pleno alcance da relação entre essa instância – o Inconsciente – e a estrutura da linguagem só foi atingido décadas mais tarde, com a revisão estruturalista de Jacques Lacan. Para compreender Lacan, é essencial reconhecer as bases conceituais que o precederam: a descoberta fenomenológica de Freud e a fundação filosófica da subjetividade moderna por G. W. F. Hegel. Este ensaio explora como o Inconsciente, inicialmente revelado por seus efeitos, passa a ser definido por sua própria materialidade linguística, transformando a clínica em uma **"cura pela fala"** regida pelas leis do significante.</p>
 
                 <h2>Freud: A Revelação do Inconsciente pela Fala</h2>
                 <p>Freud, o pioneiro, descobriu o Inconsciente não como um depósito de memórias, mas como uma atividade psíquica dinâmica, capaz de produzir manifestações na superfície da consciência. Essas manifestações são os famosos "atos falhos" (parapraxis), os sonhos e os sintomas. O crucial para a relação com a linguagem é o método de acesso a ele: a **associação livre**.</p>
@@ -235,102 +234,4 @@
                 text = text.replace(/\*/g, '').replace(/\[.*\]/g, ''); 
                 
                 if (text.length > 0) {
-                    articleTextData.push({ element: element, text: text });
-                }
-            });
-        }
-
-        // Função para remover o destaque
-        function cleanupHighlight() {
-            document.querySelectorAll('.speaking-highlight').forEach(el => {
-                el.classList.remove('speaking-highlight');
-            });
-        }
-        
-        // Inicia a leitura do zero
-        function startSpeech() {
-            synth.cancel();
-            initializeArticleText();
-            
-            const voice = getPortugueseVoice();
-
-            if (!voice) {
-                console.warn("Nenhuma voz em Português encontrada. A leitura pode não funcionar ou usar uma voz incorreta.");
-            }
-
-            let currentIndex = 0;
-
-            function processNextSentence() {
-                if (currentIndex >= articleTextData.length) {
-                    // Terminou a leitura
-                    cleanupHighlight();
-                    isSpeaking = false;
-                    ttsButton.innerHTML = '<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.899a9 9 0 010 14.142M12 21V3m0 18a9 9 0 01-9-9h18a9 9 0 01-9 9z" /></svg><span>Ouvir Artigo</span>';
-                    return;
-                }
-
-                const data = articleTextData[currentIndex];
-                const textToSpeak = data.text;
-                
-                cleanupHighlight();
-                data.element.classList.add('speaking-highlight');
-                data.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                utterance = new SpeechSynthesisUtterance(textToSpeak);
-                utterance.voice = voice;
-                utterance.lang = 'pt-BR';
-                utterance.rate = 1.0; 
-
-                utterance.onend = () => {
-                    currentIndex++;
-                    processNextSentence(); 
-                };
-
-                utterance.onerror = (event) => {
-                    console.error('SpeechSynthesisUtterance.onerror', event);
-                    currentIndex++;
-                    processNextSentence(); 
-                };
-
-                synth.speak(utterance);
-                
-                ttsButton.innerHTML = '<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9l2-2m0 0l2 2m-2-2v8m4 0a4 4 0 01-4 4H8m0-4a4 4 0 004-4V7" fill="currentColor"/></svg><span>Pausar Leitura</span>';
-                isSpeaking = true;
-            }
-            
-            processNextSentence();
-        }
-
-        // Função principal para falar/pausar/retomar
-        function toggleSpeech() {
-            if (synth.speaking) {
-                if (isSpeaking) {
-                    // Pausa
-                    synth.pause();
-                    isSpeaking = false;
-                    ttsButton.innerHTML = '<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 19l-9-7 9-7v14z" fill="currentColor"/></svg><span>Retomar Leitura</span>';
-                    
-                } else {
-                    // Retoma
-                    synth.resume();
-                    isSpeaking = true;
-                    ttsButton.innerHTML = '<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9l2-2m0 0l2 2m-2-2v8m4 0a4 4 0 01-4 4H8m0-4a4 4 0 004-4V7" fill="currentColor"/></svg><span>Pausar Leitura</span>';
-                }
-            } else {
-                // Inicia a leitura do zero
-                startSpeech();
-            }
-        }
-
-        // Anexa o evento de clique imediatamente
-        ttsButton.addEventListener('click', toggleSpeech);
-
-        // Cancelar a fala ao fechar ou sair da página
-        window.addEventListener('beforeunload', () => {
-            synth.cancel();
-            cleanupHighlight();
-        });
-        // --- FIM DA LÓGICA DO LEITOR DE TEXTO ---
-    </script>
-</body>
-</html>
+                    articleTextData.push({ element: element
