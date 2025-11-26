@@ -3,50 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nivaldo Júnior | Psicólogo</title>
+    <title>Sobre | Nivaldo Júnior Psicólogo</title>
+    <!-- Inclui o CDN do Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Estilos base do corpo, ajustando o padding para o header fixo */
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f3f5f7;
             margin: 0;
-            padding: 0;
+            /* CRUCIAL: Adiciona padding para o cabeçalho fixo de 64px */
+            padding: 64px 0 0 0; 
             color: #333;
             line-height: 1.6;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #ddd;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.4rem;
-            color: #222;
-        }
-
-        header h2 {
-            margin-top: 10px;
-            font-weight: normal;
-            font-size: 1.2rem;
-            color: #666;
-        }
-
+        /* Estilos customizados para o conteúdo da página 'Sobre' */
         .foto-perfil {
             width: 160px;
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            margin-top: 20px;
-            border: 3px solid #eee;
+            margin: 0 auto 20px auto; /* Centraliza a imagem no container */
+            display: block;
+            border: 3px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .container {
             max-width: 800px;
             margin: 40px auto;
-            padding: 20px;
+            padding: 0 20px; /* Adiciona padding lateral para mobile */
         }
 
         .card {
@@ -54,46 +41,122 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center; /* Centraliza foto e cabeçalhos */
+        }
+
+        .card h1 {
+            margin: 0;
+            font-size: 2.4rem;
+            color: #222;
+        }
+
+        .card h2 {
+            margin-top: 10px;
+            font-weight: normal;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
         }
 
         h3 {
-            margin-top: 0;
-            color: #333;
+            margin-top: 20px;
+            color: #2a4d69;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e1e5ec;
+            padding-bottom: 5px;
+            text-align: left; /* Títulos do conteúdo voltam a ser alinhados à esquerda */
+        }
+
+        p {
+            text-align: justify; /* Mantém o texto principal justificado */
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-<header>
-    <img src="nivaldo.jpg" class="foto-perfil" alt="Foto de perfil">
-    <h1>Nivaldo Júnior</h1>
-    <h2>Psicólogo • Atendimento Online para Brasileiros na Europa</h2>
-</header>
+    <!-- NOVO CABEÇALHO FIXO COM TAILWIND CSS -->
+    <header class="fixed top-0 left-0 w-full bg-[#2a4d69] text-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Título do Site -->
+            <a href="index.html" class="text-xl font-bold">Nivaldo Júnior</a>
+            
+            <!-- Menu Principal (Desktop) -->
+            <nav class="hidden md:flex space-x-4">
+                <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
+                <!-- Link Absoluto para o Blog -->
+                <a href="https://nivaldojuniorpsi.github.io/teste/blog.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Blog</a>
+                <!-- Link Ativo para a própria página 'Sobre' -->
+                <a href="sobre.html" class="px-3 py-2 rounded-md text-sm font-medium bg-[#4A80A4] text-white">Sobre</a>
+                <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
+            </nav>
 
-<div class="container">
-    <div class="card">
-        <h3>Sobre meu trabalho</h3>
-        <p style="text-align: justify;">
-            Sou psicólogo e trabalho com uma abordagem séria, centrada na escuta e na compreensão
-            profunda da experiência humana. Atendo brasileiros que vivem na Europa e buscam
-            acolhimento, estabilidade emocional e espaço para reflexão.
-        </p>
+            <!-- Botão do Menu Hamburguer (Mobile) -->
+            <button id="menu-button" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#2a4d69] hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition duration-150" aria-controls="mobile-menu" aria-expanded="false">
+                <!-- Ícone Menu -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
+                <a href="https://nivaldojuniorpsi.github.io/teste/blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Blog</a>
+                <a href="sobre.html" class="block px-3 py-2 rounded-md text-base font-medium bg-[#4A80A4] text-white">Sobre</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
+            </div>
+        </div>
+    </header>
 
-        <p style="text-align: justify;">
-            Minha prática clínica é baseada em fundamentos da psicanálise, focando na singularidade
-            de cada sujeito, no fortalecimento da autonomia e na elaboração de conflitos internos.
-        </p>
+    <!-- CONTEÚDO PRINCIPAL (mantido o layout original da página 'Sobre') -->
+    <div class="container">
+        <div class="card">
+            <!-- CONTEÚDO RELOCADO DO HEADER ORIGINAL -->
+            <img src="nivaldo.jpg" class="foto-perfil" alt="Foto de perfil">
+            <h1>Nivaldo Júnior</h1>
+            <h2>Psicólogo • Atendimento Online para Brasileiros na Europa</h2>
+            <!-- FIM DA RELOCAÇÃO -->
 
-        <h3>Agende uma consulta</h3>
-        <p>
-            Atendo de forma totalmente online.  
-            Entre em contato para marcar sua primeira sessão:
-        </p>
+            <h3>Sobre meu trabalho</h3>
+            <p>
+                Sou psicólogo e trabalho com uma abordagem séria, centrada na escuta e na compreensão
+                profunda da experiência humana. Atendo brasileiros que vivem na Europa e buscam
+                acolhimento, estabilidade emocional e espaço para reflexão.
+            </p>
 
-        <p><strong>Email:</strong> nivaldojuniorpsi@gmail.com</p>
-        <p><strong>WhatsApp:</strong> +55 34 98444-2619</p>
+            <p>
+                Minha prática clínica é baseada em fundamentos da psicanálise, focando na singularidade
+                de cada sujeito, no fortalecimento da autonomia e na elaboração de conflitos internos.
+            </p>
+
+            <h3>Agende uma consulta</h3>
+            <p style="text-align: center;">
+                Atendo de forma totalmente online. 
+                Entre em contato para marcar sua primeira sessão:
+            </p>
+
+            <p style="text-align: center;"><strong>Email:</strong> nivaldojuniorpsi@gmail.com</p>
+            <p style="text-align: center;"><strong>WhatsApp:</strong> +55 34 98444-2619</p>
+        </div>
     </div>
-</div>
 
+    <!-- JAVASCRIPT: Lógica para o Menu Responsivo -->
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            // Alterna a classe 'hidden' para mostrar ou esconder o menu mobile
+            mobileMenu.classList.toggle('hidden');
+            
+            // Alterna o estado de acessibilidade
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+    </script>
 </body>
 </html>
