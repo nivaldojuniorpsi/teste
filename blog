@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Nivaldo Júnior Psicólogo</title>
+    <!-- Inclui o CDN do Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Configuração de fonte global e cor de fundo */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9; /* Cor de fundo clara */
+            padding-top: 64px; /* Espaço para o cabeçalho fixo */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- CABEÇALHO FIXO (Mantendo o estilo azul-escuro) -->
+    <header class="fixed top-0 left-0 w-full bg-[#2a4d69] text-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <h1 class="text-xl font-bold">Nivaldo Júnior | Blog</h1>
+            
+            <!-- Menu Principal (Desktop) -->
+            <nav class="hidden md:flex space-x-4">
+                <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
+                <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Sobre</a>
+                <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
+            </nav>
+
+            <!-- Botão do Menu Hamburguer (Mobile) -->
+            <button id="menu-button" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#2a4d69] hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition duration-150" aria-controls="mobile-menu" aria-expanded="false">
+                <!-- Ícone Menu -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Sobre</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL DO BLOG -->
+    <main class="max-w-7xl mx-auto py-8 sm:px-6 lg:px-8">
+        
+        <!-- Título da Seção -->
+        <h2 class="text-3xl font-extrabold text-[#2a4d69] mb-8 px-4 sm:px-0">
+            Artigos e Reflexões sobre Psicolinguística
+        </h2>
+
+        <!-- GRADE DE ARTIGOS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-0">
+
+            <!-- Card de Artigo 1 -->
+            <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+                <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/1D425E/ffffff?text=Psicanálise" alt="Imagem relacionada à Psicanálise">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">26 de Novembro, 2025</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">O Inconsciente e a Linguagem: Pontos de Convergência</h3>
+                    <p class="text-gray-600 line-clamp-3 mb-4">
+                        Exploramos como a estrutura da linguagem, segundo Lacan, é fundamental para a compreensão dos mecanismos do inconsciente. Uma análise sobre o "lapso" e o "chiste".
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#4A80A4] hover:text-[#2a4d69] font-medium transition duration-150">
+                        Ler Artigo Completo
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card de Artigo 2 -->
+            <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+                <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/4A80A4/ffffff?text=Desenvolvimento" alt="Imagem relacionada ao Desenvolvimento Pessoal">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">15 de Outubro, 2025</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Ansiedade e o Diálogo Interno: Como a fala nos afeta</h3>
+                    <p class="text-gray-600 line-clamp-3 mb-4">
+                        A forma como nomeamos nossos sentimentos pode mitigar ou intensificar a ansiedade. Dicas práticas baseadas na Psicolinguística para reformular pensamentos destrutivos.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#4A80A4] hover:text-[#2a4d69] font-medium transition duration-150">
+                        Ler Artigo Completo
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Card de Artigo 3 -->
+            <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+                <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/94A3B8/ffffff?text=Terapia+Online" alt="Imagem relacionada à Terapia Online">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">01 de Setembro, 2025</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">O Desafio da Terapia Online: Presença e Distância</h3>
+                    <p class="text-gray-600 line-clamp-3 mb-4">
+                        Apesar da distância física, a sessão online permite uma profundidade única no processo terapêutico. Abordamos os benefícios e os cuidados éticos essenciais.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#4A80A4] hover:text-[#2a4d69] font-medium transition duration-150">
+                        Ler Artigo Completo
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card de Artigo 4 (Exemplo com estilo diferente para demonstrar flexibilidade) -->
+             <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+                <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/5E7C8E/ffffff?text=Relacionamentos" alt="Imagem relacionada a Relacionamentos Interpessoais">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">20 de Agosto, 2025</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">A Comunicação Não-Violenta no Casal</h3>
+                    <p class="text-gray-600 line-clamp-3 mb-4">
+                        Análise de como a escolha das palavras pode transformar conflitos em oportunidades de crescimento mútuo, fortalecendo os laços afetivos.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#4A80A4] hover:text-[#2a4d69] font-medium transition duration-150">
+                        Ler Artigo Completo
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Adicionar mais cards conforme necessário -->
+
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <div class="max-w-7xl mx-auto">
+            &copy; 2025 Nivaldo Júnior. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT: Lógica para o Menu Responsivo -->
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            // Alterna a classe 'hidden' para mostrar ou esconder o menu mobile
+            mobileMenu.classList.toggle('hidden');
+            
+            // Alterna o estado de acessibilidade
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+    </script>
+</body>
+</html>
