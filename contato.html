@@ -6,7 +6,8 @@
     <title>Contato - Fale Conosco</title>
     <!-- Carrega o Tailwind CSS para estilização -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Define a fonte Inter como padrão -->
+    
+    <!-- Define as fontes e estilos base, incluindo as cores e o header fixo -->
     <style>
         /* Definindo as variáveis de cor para facilitar a manutenção */
         :root {
@@ -21,6 +22,8 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--color-light-bg);
+            /* ADICIONA ESPAÇO PARA O HEADER FIXO (60px) */
+            padding-top: 60px;
         }
         
         /* Estilos de foco personalizados usando a nova cor primária #2a4d69 */
@@ -31,11 +34,113 @@
             ring-color: var(--color-primary);
             border-color: var(--color-primary);
         }
+
+        /* ---------------------------------------------------- */
+        /* ESTILOS DO HEADER FIXO INTEGRADO */
+        /* ---------------------------------------------------- */
+        .header-fixo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: var(--color-primary); /* Usa a cor primária #2a4d69 */
+            color: white;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-fixo h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            white-space: nowrap; 
+        }
+        
+        .header-fixo p {
+            display: none; /* Esconde o subtítulo 'Psicólogo clínico' */
+        }
+
+        .menu-principal {
+            display: flex; 
+            align-items: center;
+        }
+        .menu-principal a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        #btnMenu {
+            display: none; 
+            background: none;
+            border: none;
+            color: white; 
+            font-size: 30px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* ESTILOS MOBILE (Media Queries) */
+        @media (max-width: 768px) {
+            
+            .header-fixo {
+                padding: 0 10px; 
+            }
+
+            .menu-principal {
+                display: none; 
+                flex-direction: column; 
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: var(--color-primary); /* Usa a cor primária #2a4d69 */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                padding-bottom: 10px; 
+            }
+            .menu-principal a {
+                padding: 10px 20px;
+                width: 100%;
+                text-align: right;
+            }
+
+            #btnMenu {
+                display: block; 
+            }
+            
+            .menu-ativo {
+                display: flex !important;
+            }
+        }
     </style>
 </head>
 <body>
+    
+    <!-- HEADER FIXO -->
+    <header class="header-fixo">
+        <h1>Nivaldo Júnior</h1>
+        <p>Psicólogo clínico</p>
 
-    <div class="min-h-screen flex items-center justify-center p-4 sm:p-8">
+        <button id="btnMenu" class="menu-hamburguer">☰</button>
+        
+        <nav id="menuLinks" class="menu-principal">
+            <a href="#">Blog</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contatos</a>
+        </nav>
+        
+    </header>
+    <!-- FIM DO HEADER FIXO -->
+
+    <!-- O CONTEÚDO PRINCIPAL (Formulário de Contato) -->
+    <!-- Note que o 'min-h-screen' garante que o formulário ainda ocupe a altura da tela, 
+         mas agora ele está posicionado abaixo do padding-top de 60px do body. -->
+    <div class="flex items-center justify-center p-4 sm:p-8">
         <!-- O container principal permanece branco (bg-white) para contraste com o fundo #f3f5f7 -->
         <div class="max-w-4xl w-full bg-white shadow-xl rounded-2xl overflow-hidden md:flex">
 
@@ -52,7 +157,7 @@
                             <svg class="w-6 h-6 mr-3 mt-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path></svg>
                             <div>
                                 <h3 class="font-semibold text-lg">E-mail</h3>
-                                <p class="text-gray-400">nivaldojuniorpsi@gmail.com</p>
+                                <p class="text-gray-400">contato@seuprojeto.com.br</p>
                             </div>
                         </div>
 
@@ -61,7 +166,7 @@
                             <svg class="w-6 h-6 mr-3 mt-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.128a11.058 11.058 0 006.45 6.45l1.128-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                             <div>
                                 <h3 class="font-semibold text-lg">Telefone / WhatsApp</h3>
-                                <p class="text-gray-400">(34) 98444-2619</p>
+                                <p class="text-gray-400">(XX) 9XXXX-XXXX</p>
                             </div>
                         </div>
 
@@ -69,8 +174,8 @@
                             <!-- Ícone de Localização -->
                             <svg class="w-6 h-6 mr-3 mt-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             <div>
-                                <h3 class="font-semibold text-lg">Endereço</h3>
-                                <p class="text-gray-400">Uberlândia/MG, Brasil</p>
+                                <h3 class="font-semibold text-lg">Endereço (Opcional)</h3>
+                                <p class="text-gray-400">Rua Exemplo, 123 - Cidade/UF, Brasil</p>
                             </div>
                         </div>
                     </div>
@@ -136,6 +241,8 @@
 
         </div>
     </div>
+    <!-- FIM DO CONTEÚDO PRINCIPAL -->
+
 
     <!-- Script para simular o envio do formulário e mostrar uma mensagem de sucesso -->
     <script>
@@ -180,6 +287,14 @@
 
 
             }, 2000); // Espera 2 segundos para simular a requisição de rede
+        });
+
+        /* SCRIPT PARA O MENU HAMBÚRGUER */
+        const btnMenu = document.getElementById('btnMenu');
+        const menuLinks = document.getElementById('menuLinks');
+
+        btnMenu.addEventListener('click', function() {
+            menuLinks.classList.toggle('menu-ativo');
         });
     </script>
 
